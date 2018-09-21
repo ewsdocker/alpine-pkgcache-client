@@ -2,12 +2,12 @@
 # =========================================================================
 # =========================================================================
 #
-#	alpine-pkgcache-client:3.8.0
+#	alpine-pkgcache-client:latest
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 3.8.0
+# @version latest
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/alpine-pkgcache-client
@@ -41,8 +41,8 @@ docker run -it \
            --network=pkgnet \
            -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/source:/source \
-           -v ${HOME}/workspace-alpine-pkgcache-client-3.8.0:/workspace \
+           -v ${HOME}/workspace-alpine-pkgcache-client-latest:/workspace \
            --mount source=pkgcache,target=/pkgcache \
-           --name=alpine-pkgcache-client-3.8.0 \
-       ewsdocker/alpine-pkgcache-client:3.8.0  
+           --name=alpine-pkgcache-client-latest \
+       ewsdocker/alpine-pkgcache-client:latest  
 
