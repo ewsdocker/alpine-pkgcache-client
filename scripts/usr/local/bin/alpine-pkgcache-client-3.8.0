@@ -38,6 +38,7 @@
 
 docker run -it \
            --rm \
+           --network=pkgnet \
            -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/.config/docker/eclipse/cpp:/root \
            -v ${HOME}/source:/source \
