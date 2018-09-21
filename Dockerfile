@@ -55,6 +55,8 @@ ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}"
 ENV LMSBUILD_PACKAGE="ewsdocker/alpine-nginx-client:3.8.0"
 ENV LMSBUILD_BASE="ewsdocker/alpine-base:3.8.0"
 
+ENV LMSBUILD_SERVER="alpine-nginx-pkgcache"
+
 # =========================================================================
 
 RUN apk update \
