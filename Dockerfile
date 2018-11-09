@@ -7,7 +7,7 @@
 # ========================================================================================
 #
 # @author Jay Wheeler.
-# @version 3.8.0
+# @version 3.8.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package alpine-pkgcache-client
@@ -38,7 +38,7 @@
 # ========================================================================================
 #
 # ========================================================================================
-FROM ewsdocker/alpine-nginx-client:3.8.0
+FROM ewsdocker/alpine-nginx-client:3.8.1
 
 # =========================================================================
 
@@ -46,14 +46,14 @@ ENV LMS_BASE="/usr/local"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="3.8.0"
+ENV LMSBUILD_VERSION="3.8.1"
 ENV LMSBUILD_NAME="alpine-pkgcache-client" 
 ENV LMSBUILD_REPO=ewsdocker
 ENV LMSBUILD_REGISTRY=""
 
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="ewsdocker/alpine-nginx-client:3.8.0"
-ENV LMSBUILD_BASE="ewsdocker/alpine-base:3.8.0"
+ENV LMSBUILD_PACKAGE="ewsdocker/alpine-nginx-client:3.8.1"
+ENV LMSBUILD_BASE="ewsdocker/alpine-base:3.8.1"
 
 ENV LMSBUILD_SERVER="alpine-nginx-pkgcache"
 

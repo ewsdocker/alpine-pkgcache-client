@@ -1,32 +1,22 @@
-### ewsdocker/alpine-pkgcache-client:3.8.0
+### ewsdocker/alpine-pkgcache-client:3.8.1
 
 **ewsdocker/alpine-pkgcache-client** is a simple **Alpine Linux**-based **Docker** image designed as a console interface to maintain the data and configuration files used by **ewsdocker/alpine-nginx-pkgcache**. 
 
-______  
+**ewsdocker/alpine-nginx-pkgcache** is a **NGINX HHTP** Web server image based on [ewsdocker/alpine-nginx](https://github.com/ewsdocker/alpine-nginx).  
 
+**alpine-nginx-pkgcache** provides a method, using only existing Docker containers and Docker resources, to add files to a permanent file-cache and retrieve selected files from the file-cache by a running **Docker build** process.  
+
+Learn about the [pkgcache](https://github.com/ewsdocker/ewsdocker.github.io/wiki/pkgcache") project on the [Advanced Docker Concepts - pkgcache](https://github.com/ewsdocker/ewsdocker.github.io/wiki/pkgcache) Wiki page.  
+
+____  
 A pre-made docker image of **ewsdocker/alpine-pkgcache-client** is available from [ewsdocker/alpine-pkgcache-client](https://hub.docker.com/r/ewsdocker/alpine-pkgcache-client/) at [Docker Hub](https://hub.docker.com).  
 ______  
-
-
-**Installing ewsdocker/alpine-pkgcache-client**  
+#### Installing ewsdocker/alpine-pkgcache-client  
 
 The following scripts will download the selected **ewsdocker/alpine-pkgcache-client** image, create a container, setup and populate the directory structures, and create the execution script(s).  
 
 The <i>default</i> values will install all directories and contents in the <b>docker host</b> user's home directory.  
-
-**ewsdocker/alpine-pkgcache-client:3.8.0**
-  
-    docker run --rm \
-               -v ${HOME}/bin:/userbin \
-               -v ${HOME}/.local:/usrlocal \
-               -e LMS_BASE="${HOME}/.local" \
-               -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/alpine-pkgcache-client-3.8.0:/root \
-               --name=alpine-pkgcache-client-3.8.0 \
-           ewsdocker/alpine-pkgcache-client:3.8.0 lms-setup-alpine  
-
 ____  
-
 **ewsdocker/alpine-pkgcache-client:latest**
   
     docker run --rm \
@@ -41,7 +31,20 @@ ____
 
 ____  
 
-**Running the installed scripts**
+**ewsdocker/alpine-pkgcache-client:3.8.1**
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/alpine-pkgcache-client-3.8.1:/root \
+               --name=alpine-pkgcache-client-3.8.1 \
+           ewsdocker/alpine-pkgcache-client:3.8.1 lms-setup-alpine  
+
+____  
+
+#### Running the installed scripts  
 
 After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
 
@@ -49,26 +52,8 @@ After running the above command script, and using the settings indicated, the do
  - the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
  - the associated **alpine-pkgcache-client-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names.  
 
-Execute the following _docker run_ command to create and start a client container :
-
-**ewsdocker/alpine-pkgcache-client:3.8.0**
-  
-    docker run -it \
-               --rm \
-               --network=pkgnet \
-               -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/source:/source \
-               -v ${HOME}/workspace-alpine-pkgcache-client-3.8.0:/workspace \
-               --mount source=pkgcache,target=/pkgcache \
-               --name=alpine-pkgcache-client-3.8.0 \
-           ewsdocker/alpine-pkgcache-client:3.8.0  
-
-To create and run the container, the following should work from the command-line:
-
-    ~/.local/bin/alpine-pkgcache-client-3.8.0  
-
+Execute the following _docker run_ command to create and start a client container:  
 ____  
-
 **ewsdocker/alpine-pkgcache-client:latest**
   
 The following _docker run_ command creates and starts a client container. It is automatically installed by the _lms-setup-alpine_ script, above:
@@ -88,16 +73,30 @@ To create and run the container, enter the following command on the console comm
     ~/.local/bin/alpine-pkgcache-client-latest  
 
 ____  
+**ewsdocker/alpine-pkgcache-client:3.8.1**
+  
+    docker run -it \
+               --rm \
+               --network=pkgnet \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace-alpine-pkgcache-client-3.8.1:/workspace \
+               --mount source=pkgcache,target=/pkgcache \
+               --name=alpine-pkgcache-client-3.8.1 \
+           ewsdocker/alpine-pkgcache-client:3.8.1  
 
-**Visit the [ewsdocker/alpine-pkgcache-client Wiki](https://github.com/ewsdocker/alpine-pkgcache-client/wiki/QuickStart) for complete documentation of this docker image.**  
+To create and run the container, the following should work from the command-line:
+
+    ~/.local/bin/alpine-pkgcache-client-3.8.1  
 
 ____  
-
-**Exiting the Interactive Shell**
+**Visit the [ewsdocker/alpine-pkgcache-client Wiki](https://github.com/ewsdocker/alpine-pkgcache-client/wiki/QuickStart) for complete documentation of this docker image.**  
+____  
+#### Exiting the Interactive Shell  
 
 The interactive shell may be exited by entering **exit** at the _bash_ prompt, or running the following command from the docker host running the container  
 
-    docker stop alpine-pkgcache-client-3.8.0   
+    docker stop alpine-pkgcache-client-3.8.1   
 
 or  
 
