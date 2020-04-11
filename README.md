@@ -1,4 +1,4 @@
-### ewsdocker/alpine-pkgcache-client:3.8.1
+### ewsdocker/alpine-pkgcache-client:3.10.0
 
 **ewsdocker/alpine-pkgcache-client** is a simple **Alpine Linux**-based **Docker** image designed as a console interface to maintain the data and configuration files used by **ewsdocker/alpine-nginx-pkgcache**. 
 
@@ -31,16 +31,16 @@ ____
 
 ____  
 
-**ewsdocker/alpine-pkgcache-client:3.8.1**
+**ewsdocker/alpine-pkgcache-client:3.10.0**
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/alpine-pkgcache-client-3.8.1:/root \
-               --name=alpine-pkgcache-client-3.8.1 \
-           ewsdocker/alpine-pkgcache-client:3.8.1 lms-setup-alpine  
+               -v ${HOME}/.config/docker/alpine-pkgcache-client-3.10.0:/root \
+               --name=alpine-pkgcache-client-3.10.0 \
+           ewsdocker/alpine-pkgcache-client:3.10.0 lms-setup-alpine  
 
 ____  
 
@@ -73,21 +73,21 @@ To create and run the container, enter the following command on the console comm
     ~/.local/bin/alpine-pkgcache-client-latest  
 
 ____  
-**ewsdocker/alpine-pkgcache-client:3.8.1**
+**ewsdocker/alpine-pkgcache-client:3.10.0**
   
     docker run -it \
                --rm \
                --network=pkgnet \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/source:/source \
-               -v ${HOME}/workspace-alpine-pkgcache-client-3.8.1:/workspace \
+               -v ${HOME}/workspace-alpine-pkgcache-client-3.10.0:/workspace \
                --mount source=pkgcache,target=/pkgcache \
-               --name=alpine-pkgcache-client-3.8.1 \
-           ewsdocker/alpine-pkgcache-client:3.8.1  
+               --name=alpine-pkgcache-client-3.10.0 \
+           ewsdocker/alpine-pkgcache-client:3.10.0  
 
 To create and run the container, the following should work from the command-line:
 
-    ~/.local/bin/alpine-pkgcache-client-3.8.1  
+    ~/.local/bin/alpine-pkgcache-client-3.10.0  
 
 ____  
 **Visit the [ewsdocker/alpine-pkgcache-client Wiki](https://github.com/ewsdocker/alpine-pkgcache-client/wiki/QuickStart) for complete documentation of this docker image.**  
@@ -96,7 +96,7 @@ ____
 
 The interactive shell may be exited by entering **exit** at the _bash_ prompt, or running the following command from the docker host running the container  
 
-    docker stop alpine-pkgcache-client-3.8.1   
+    docker stop alpine-pkgcache-client-3.10.0   
 
 or  
 
@@ -109,7 +109,7 @@ The following messages will be output:
 
 ____  
 
-**Copyright © 2018. EarthWalk Software.**  
+**Copyright © 2018, 2020. EarthWalk Software.**  
 **Licensed under the GNU General Public License, GPL-3.0-or-later.**  
 
 This file is part of **ewsdocker/alpine-pkgcache-client**.  
